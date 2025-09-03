@@ -1,13 +1,21 @@
 'use client';
+import { FaLocationArrow } from 'react-icons/fa';
 import { cn } from '../util/utils';
 import MagicButton from './MagicButton';
-import { SparklesCore } from './Sparkles';
-import { FaLocationArrow } from 'react-icons/fa';
 
-import { Spotlight, SpotlightPreview } from './Spotlight';
+import { Spotlight } from './Spotlight';
 import { TextGenerateEffect } from './TextGenerateEffect';
 
-function handleClick() {}
+function handleClick() {
+  
+    const link = document.createElement('a');
+    link.href = '/Eyob CV.pdf'; // path is relative to public folder
+    link.download = 'Eyob CV.pdf'; // filename for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  
+}
 
 function Home() {
   return (
@@ -41,23 +49,21 @@ function Home() {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <h2 className="uppercase tracking-widest test-xs text-center text-blue-100 max-w-80">
-            Dynamic Web Magic with Next.js
+            Welcome to My Portfolio
           </h2>
           <TextGenerateEffect
-            className="text-center text0[40px] md:text-5xl lg:text-6xl"
-            words="Building My First Portfolio"
+            className="text-center text0[40px] md:text-4xl lg:text-4.5xl"
+            words="Code, Design, Deploy —> I Bring Projects to Life."
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi, I'm Eyob, A MERN Developer based in Addis
-            Ababa
+            Hi, I'm Eyob, A FullStack Developer
           </p>
           <a>
             <a href="#about">
               <MagicButton
-                title="View CV"
+                title="View Portfolio"
                 icon={<FaLocationArrow />}
                 position="right"
-                handleClick={handleClick}
               />
             </a>
             <a>

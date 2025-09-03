@@ -4,6 +4,7 @@ import Home from './components/Home';
 import AboutGrid from './components/AboutGrid';
 import ProjectsGrid from './components/ProjectsGrid';
 import ContactGrid from './components/ContactGrid';
+import Footer from './components/Footer';
 
 export default function Page() {
   return (
@@ -21,6 +22,7 @@ export default function Page() {
         <AboutGrid />
         <ProjectsGrid />
         <ContactGrid />
+        <Footer />
       </div>
     </main>
   );

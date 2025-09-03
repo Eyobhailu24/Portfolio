@@ -25,6 +25,9 @@ export const BentoGridItem = ({
   titleClassName,
   spareImg,
   appearDelay,
+  avatarSrc,
+  info,
+  skills,
 }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -81,16 +84,75 @@ export const BentoGridItem = ({
         <div className="relative flex h-full flex-col justify-between p-5">
           <div
             className={cn(
-              'text-neutral-800 dark:text-neutral-200 font-semibold tracking-tight',
+              'font-semibold tracking-tight text-2xl md:text-3xl bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-purple-400 bg-clip-text text-transparent',
               titleClassName
             )}
           >
             {title}
           </div>
           {description && (
-            <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
+            <p className="mt-3 text-base md:text-lg text-neutral-300 leading-relaxed">
               {description}
             </p>
+          )}
+
+          {/* Custom content blocks */}
+          {typeof avatarSrc !== 'undefined' && (
+            <div className="mt-4 flex flex-1 items-center justify-center">
+              <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-white/5 flex items-center justify-center">
+                {avatarSrc ? (
+                  <img
+                    src={avatarSrc}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400">Your photo</span>
+                )}
+              </div>
+            </div>
+          )}
+
+          {info && (
+            <div className="mt-5 space-y-2 text-base md:text-lg text-neutral-300">
+              {info.name && (
+                <div>
+                  <span className="font-medium text-neutral-900 dark:text-neutral-100">Name: </span>
+                  <span>{info.name}</span>
+                </div>
+              )}
+              {info.location && (
+                <div>
+                  <span className="font-medium text-neutral-900 dark:text-neutral-100">Location: </span>
+                  <span>{info.location}</span>
+                </div>
+              )}
+              {info.education && (
+                <div>
+                  <span className="font-medium text-neutral-900 dark:text-neutral-100">Education: </span>
+                  <span>{info.education}</span>
+                </div>
+              )}
+            </div>
+          )}
+
+          {Array.isArray(skills) && skills.length > 0 && (
+            <div className="mt-4 space-y-4">
+              {skills.map((s, idx) => (
+                <div key={idx}>
+                  <div className="flex items-center justify-between text-base md:text-lg mb-1">
+                    <span className="text-neutral-800 dark:text-neutral-200">{s.name}</span>
+                    <span className="text-neutral-500 dark:text-neutral-400">{s.level}%</span>
+                  </div>
+                  <div className="h-2 w-full rounded-full bg-neutral-200 dark:bg-white/10 overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-purple-500 transition-all duration-1000 ease-out"
+                      style={{ width: visible ? `${s.level}%` : '0%' }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
 
           {/* Feature image if provided */}

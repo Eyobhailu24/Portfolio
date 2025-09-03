@@ -6,81 +6,59 @@ export const navItems = [
 ];
 
 export const gridItems = [
+  // Combined About card: profile photo + personal info (left)
   {
     id: 1,
-    title:
-      'I prioritize client collaboration, fostering open communication ',
+    title: 'About Me',
     description: '',
-    className:
-      'lg:col-span-3 md:col-span-6 md:row-span-4',
-    imgClassName: 'w-full h-full',
-    titleClassName: 'justify-end',
-    img: '/b1.svg',
+    className: 'md:col-span-1 md:row-span-2',
+    imgClassName: '',
+    titleClassName: '',
     spareImg: '',
+    avatarSrc: '', // set to your image path to display a real photo
+    info: {
+      name: 'Eyob Hailu',
+      location: 'Addis Ababa, Ethiopia',
+      education: 'Bachelor Degree / Hawassa University',
+    },
   },
+  // Empty/Bio card (middle)
   {
     id: 2,
-    title:
-      "I'm very flexible with time zone communications",
-    description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
+    title: 'Bio',
+    description:
+      'I am a passionate Full Stack Developer with a focus on the MERN (MongoDB, Express.js, React, Node.js) stack. I graduated from Hawassa University, where I built a strong foundation in software development and problem-solving. Over time, I have worked on multiple projects that allowed me to apply both front-end and back-end skills, from designing intuitive user interfaces to developing efficient server-side applications. I enjoy turning ideas into functional, scalable solutions and thrive in collaborative environments where creativity and technology meet.', // write your bio here later
+    className: 'md:col-span-1 md:row-span-2',
     imgClassName: '',
-    titleClassName: 'justify-start',
-    img: '',
+    titleClassName: '',
     spareImg: '',
   },
+  // Skills on separate card (right)
   {
     id: 3,
-    title: 'My tech stack',
-    description: 'I constantly try to improve',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
+    title: 'Skills',
+    description: 'Programming proficiency',
+    className: 'md:col-span-1 md:row-span-2',
     imgClassName: '',
-    titleClassName: 'justify-center',
-    img: '',
+    titleClassName: '',
     spareImg: '',
-  },
-  {
-    id: 4,
-    title:
-      'Tech enthusiast with a passion for development.',
-    description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
-    imgClassName: '',
-    titleClassName: 'justify-start',
-    img: '/grid.svg',
-    spareImg: '/b4.svg',
-  },
-
-  {
-    id: 5,
-    title: 'Currently building a JS Animation library',
-    description: 'The Inside Scoop',
-    className: 'md:col-span-3 md:row-span-2',
-    imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60',
-    titleClassName:
-      'justify-center md:justify-start lg:justify-center',
-    img: '/b5.svg',
-    spareImg: '/grid.svg',
-  },
-  {
-    id: 6,
-    title: 'Do you want to start a project together?',
-    description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
-    imgClassName: '',
-    titleClassName:
-      'justify-center md:max-w-full max-w-60 text-center',
-    img: '',
-    spareImg: '',
+    skills: [
+      { name: 'JavaScript', level: 87 },
+      { name: 'React.js', level: 84 },
+      { name: 'Node.js', level: 83 },
+      { name: 'HTML / CSS / Tailwind', level: 80 },
+      { name: 'Next.js', level: 75 },
+      { name: 'Flutter', level: 63 },
+    ],
   },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: '3D Solar System Planets to Explore',
-    des: 'Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.',
-    img: '/p1.svg',
+    title: 'The Wild Oasis Website',
+    des: 'Wild Oasis Cabin Booking offers a seamless way to find and reserve cozy cabins surrounded by nature. Explore stunning locations, check availability, and book your perfect getaway with ease.',
+    img: '/wild project.png',
     iconLists: [
       '/re.svg',
       '/tail.svg',
@@ -88,12 +66,12 @@ export const projects = [
       '/three.svg',
       '/fm.svg',
     ],
-    link: 'https://github.com/adrianhajdin?tab=repositories',
+    link: 'https://the-wild-oasis-website-demo-roan.vercel.app/',
   },
   {
     id: 2,
-    title: 'Yoom - Video Conferencing App',
-    des: 'Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.',
+    title: 'Smart Parking System',
+    des: 'Smart Parking System simplifies urban parking by helping users find available spots in real-time. Reserve, navigate, and manage parking effortlessly, saving time and reducing stress.',
     img: '/p2.svg',
     iconLists: [
       '/next.svg',
@@ -106,8 +84,8 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'AI Image SaaS - Canva Application',
-    des: 'A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.',
+    title: 'Flash Delivery',
+    des: 'Flash Food Delivery brings your favorite meals to your doorstep quickly and reliably. Browse local restaurants, place orders in seconds, and enjoy fast, contactless delivery.',
     img: '/p3.svg',
     iconLists: [
       '/re.svg',
@@ -117,20 +95,6 @@ export const projects = [
       '/c.svg',
     ],
     link: 'https://github.com/adrianhajdin/ai_saas_app',
-  },
-  {
-    id: 4,
-    title: 'Animated Apple Iphone 3D Website',
-    des: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..',
-    img: '/p4.svg',
-    iconLists: [
-      '/next.svg',
-      '/tail.svg',
-      '/ts.svg',
-      '/three.svg',
-      '/gsap.svg',
-    ],
-    link: 'https://github.com/adrianhajdin/iphone',
   },
 ];
 
